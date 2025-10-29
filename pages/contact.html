@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact - T-Plus Technologies</title>
+    <link rel="stylesheet" href="/stylesheet/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"
+    />
+    <link rel="icon" href="/images/LOGO.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <!-- Theme Switcher -->
+    <button class="theme-switcher" id="themeSwitcher" aria-label="Toggle theme">
+      <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">
+          <a href="/index.html"
+            ><img class="logo" src="/images/LOGO.png" alt="T-Plus Technologies"
+          /></a>
+        </div>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="expertise.html" class="nav-link">Expertise</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <button
+          class="mobile-menu-button"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-contact">
+      <div class="hero-content fade-in-up">
+        <h1 class="hero-title">Contact Us</h1>
+        <p class="hero-subtitle">Get In Touch With Our Team</p>
+      </div>
+      <img src="/images/contact.jpg" alt="Contact Hero" class="hero-image" />
+    </section>
+
+    <!-- Contact Content -->
+    <section class="content-section">
+      <div class="container">
+        <div class="contact-grid fade-in-up">
+          <!-- Contact Form -->
+          <div class="contact-form glass-effect">
+            <h2>Send us a Message</h2>
+            <form id="contactForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required />
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="cta-button">Send Message</button>
+            </form>
+          </div>
+
+          <!-- Contact Info -->
+          <div class="contact-info">
+            <div class="info-card glass-effect fade-in-up">
+              <i class="fas fa-map-marker-alt"></i>
+              <h3>Address</h3>
+              <p>
+                Plot no. 05. Street W-6 <br />
+                Rawat <br />
+                Rawalpindi
+              </p>
+            </div>
+            <div class="info-card glass-effect fade-in-up">
+              <i class="fas fa-phone"></i>
+              <h3>Phone</h3>
+              <p>+92-323-8560567</p>
+            </div>
+            <div class="info-card glass-effect fade-in-up">
+              <i class="fas fa-envelope"></i>
+              <h3>Email</h3>
+              <p>info@tplustechnologies.com</p>
+            </div>
+            <div class="info-card glass-effect fade-in-up">
+              <i class="fas fa-clock"></i>
+              <h3>Business Hours</h3>
+              <p>Mon - Fri: 9:00 AM - 6:00 PM<br />Sat: 10:00 AM - 4:00 PM</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="map-section fade-in-up">
+          <h2 class="section-title">Find Us On The Map</h2>
+          <iframe
+            src="https://www.google.com/maps?q=33.5115566,73.2329221&z=17&output=embed"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 12px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>T-Plus Technologies</h4>
+          <p>Leading the future of electro-mechanical innovation</p>
+        </div>
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="expertise.html">Expertise</a></li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p>Email: info@tplustechnologies.com</p>
+          <p>Phone: +92-323-8560567</p>
+        </div>
+        <div class="footer-section">
+          <h4>Follow Us</h4>
+          <div class="social-links">
+            <a
+              href="https://www.facebook.com/people/TPlus-Technologies/61565493897039/"
+              ><i class="fab fa-facebook"></i
+            ></a>
+            <a href="https://www.linkedin.com/company/t-plus-technologies/"
+              ><i class="fab fa-linkedin"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2002 T-Plus Technologies. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
