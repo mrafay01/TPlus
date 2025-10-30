@@ -666,7 +666,7 @@ body.light-mode .theme-switcher:hover {
   align-items: center;
   justify-content: center;
   margin: 0px auto 50px auto;
-  width: 50%;
+  width: 80%;
   text-align: center;
 }
 
@@ -685,8 +685,9 @@ body.light-mode .theme-switcher:hover {
 }
 
 .home-stats {
-  width: 1400px;
+  max-width: 1400px;
   margin: auto;
+  padding: 0 2.5rem;
 }
 
 /* Story Section */
