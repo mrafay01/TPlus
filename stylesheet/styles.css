@@ -5,6 +5,18 @@
   box-sizing: border-box;
 }
 
+#particles-js {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: var(--bg-primary);
+}
+
+
+
 /* Restricted color palette: White, Black, and Blue shades only */
 :root {
   /* === Blue & White Dark Theme Palette === */
@@ -51,8 +63,8 @@
   --border-color: rgba(0, 153, 204, 0.2);
 
   /* === Blob Animation Colors (DARK MODE) === */
-  --blob-primary: rgba(87, 197, 201, 0.959); /* Dark Blue Opacity */
-  --blob-blur: 20px; /* Softer blur for natural glow */
+  /* --blob-primary: rgba(87, 197, 201, 0.959);
+  --blob-blur: 20px; */
 }
 
 body.light-mode {
@@ -69,8 +81,8 @@ body.light-mode {
   --border-color: rgba(0, 153, 204, 0.15);
 
   /* === Blob Animation Colors (LIGHT MODE FIX) === */
-  --blob-primary: #4fc2f02f; /* Lighter Blue, much lower opacity */
-  --blob-blur: 20px;
+  /* --blob-primary: #4fc2f02f;
+  --blob-blur: 20px; */
 }
 
 html {
@@ -97,57 +109,16 @@ body {
       transparent 50%
     );
   background-blend-mode: overlay;
-  background-attachment: fixed;
   background-size: 300% 300%;
+  background-attachment: fixed;
   color: var(--text-primary);
   overflow-x: hidden;
   min-height: 100vh;
-  animation: gradientShift 35s ease-in-out infinite;
+  /* animation: gradientShift 35s ease-in-out infinite; */
   position: relative;
 }
 
-/* === New Blob Animation (Body::AFTER - PRIMARY BLOB) === */
-body::after {
-  content: "";
-  position: fixed;
-  width: 190vw;
-  height: 180vh;
-  top: -50vh;
-  left: -50vw;
-  pointer-events: none;
-  z-index: -2; /* Placed behind the first blob */
-  will-change: transform, filter;
-  /* Reduced size to 600px and using primary color */
-  background: radial-gradient(
-    circle 400px at 50% 50%,
-    var(--blob-primary) 70%,
-    transparent 10%
-  );
-  filter: blur(var(--blob-blur));
-  mix-blend-mode: multiply;
-  animation: smoothBlobMove2 28s reverse ease-in-out infinite;
-}
 
-body::before {
-  content: "";
-  position: fixed;
-  width: 190vw;
-  height: 180vh;
-  top: -50vh;
-  left: -50vw;
-  pointer-events: none;
-  z-index: -3; /* Placed behind the first blob */
-  will-change: transform, filter;
-  /* Reduced size to 600px and using primary color */
-  background: radial-gradient(
-    circle 600px at 50% 50%,
-    var(--blob-primary) 50%,
-    transparent 10%
-  );
-  filter: blur(var(--blob-blur));
-  mix-blend-mode: multiply;
-  animation: smoothBlobMove1 28s reverse ease-in-out infinite;
-}
 
 /* === Keyframes === */
 
@@ -1032,9 +1003,15 @@ body.light-mode .theme-switcher:hover {
 }
 
 .info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   padding: 1.5rem;
+  height: 100%;
 }
+
 
 .info-card i {
   font-size: 2rem;
