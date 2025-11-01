@@ -101,7 +101,7 @@
   height: 11px;
   border-left: 2px solid var(--accent-primary, #00d9ff);
   border-bottom: 2px solid var(--accent-primary, #00d9ff);
-  transform: rotate(-45deg);  
+  transform: rotate(-45deg);
   animation: bounce 1.5s infinite;
 }
 
@@ -117,14 +117,14 @@
 
 /* Bouncing animation */
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-2px) rotate(-45deg);
   }
   50% {
     transform: translateY(1px) rotate(-45deg);
   }
 }
-
 
 /* Content */
 
@@ -168,12 +168,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* background: var(--bg-primary); */
-  /* border: 1px solid rgba(95, 153, 158, 0.3); */
-  /* border-radius: 20px; */
   overflow: hidden;
   cursor: pointer;
-  /* transition: all 0.3s ease; */
 }
 
 /* Make whole card clickable */
@@ -260,12 +256,36 @@
   }
 }
 
+.form-grid .contact-form #contactForm {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.form-grid .contact-form .form-group {
+  flex: 1 1 45%; /* Two per row */
+  display: flex;
+  flex-direction: column;
+  max-width: 50%;
+}
+
+.form-grid .contact-form button {
+  flex: 0 0 auto; /* Prevents it from stretching */
+  align-self: center; /* Centers the button horizontally */
+  padding: 0.8rem 2rem; /* Comfortable sizing */
+  margin: 0 auto;
+}
+
 /* === Responsive Adjustments === */
 @media (max-width: 768px) {
   .service-card-1 {
     flex-direction: column !important;
   }
-
+  .form-grid .contact-form .form-group {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
   .service-image-1 {
     height: 200px;
   }

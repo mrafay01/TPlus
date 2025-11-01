@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact - T-Plus Technologies</title>
+    <title>Get in Touch - T-Plus Technologies</title>
     <link rel="stylesheet" href="../stylesheet/styles.css" />
+    <link rel="stylesheet" href="../stylesheet/services.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -27,14 +28,17 @@
       <div class="nav-container">
         <div class="nav-logo">
           <a href="../index.html"
-            ><img class="logo" src="../images/LOGO.png" alt="T-Plus Technologies"
+            ><img
+              class="logo"
+              src="../images/LOGO.png"
+              alt="T-Plus Technologies"
           /></a>
         </div>
         <ul class="nav-menu">
           <li><a href="../index.html" class="nav-link">Home</a></li>
           <li><a href="about.html" class="nav-link">About</a></li>
           <li class="dropdown">
-            <a href="services.html" class="nav-link">Services ▾</a>
+            <a href="services.html" class="nav-link active">Services ▾</a>
             <ul class="dropdown-menu">
               <li><a href="services.html#mechanical">Mechanical</a></li>
               <li><a href="services.html#electronics">Electronics</a></li>
@@ -45,7 +49,7 @@
             </ul>
           </li>
           <li><a href="expertise.html" class="nav-link">Expertise</a></li>
-          <li><a href="contact.html" class="nav-link active">Contact</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         <button
           class="mobile-menu-button"
@@ -60,8 +64,10 @@
     <!-- Hero Section -->
     <section class="hero-contact">
       <div class="hero-content fade-in-up">
-        <h1 class="hero-title">Contact Us</h1>
-        <p class="hero-subtitle">Get In Touch With Our Team</p>
+        <h1 class="hero-title">Get In Touch</h1>
+        <p class="hero-subtitle">
+          Request a Quotation, Service Details, or Customer Support
+        </p>
       </div>
       <img src="../images/contact.jpg" alt="Contact Hero" class="hero-image" />
     </section>
@@ -69,10 +75,10 @@
     <!-- Contact Content -->
     <section class="content-section">
       <div class="container">
-        <div class="contact-grid fade-in-up">
+        <div class="form-grid fade-in-up">
           <!-- Contact Form -->
           <div class="contact-form glass-effect">
-            <h2>Send us a Message</h2>
+            <h2>Fill out the Form Below</h2>
             <form id="contactForm">
               <div class="form-group">
                 <label for="name">Name</label>
@@ -83,11 +89,39 @@
                 <input type="email" id="email" name="email" required />
               </div>
               <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
+                <label for="contact">Contact</label>
+                <input type="text" id="contact" name="contact" required />
               </div>
               <div class="form-group">
-                <label for="message">Message</label>
+                <label for="company">Company</label>
+                <input type="text" id="company" name="company" />
+              </div>
+              <div class="form-group">
+                <label for="service-type">Service Type</label>
+                <input
+                  list="service-options"
+                  id="service-type"
+                  name="service-type"
+                  placeholder="Select or type service..."
+                  required
+                />
+
+                <datalist id="service-options">
+                  <option value="Electronics"></option>
+                  <option value="Mechanical"></option>
+                  <option value="Software Services"></option>
+                  <option value="IOT Services"></option>
+                  <option value="General Supply Order"></option>
+                  <option value="Industrial Automation"></option>
+                </datalist>
+              </div>
+              <div class="form-group">
+                <label for="doc">Upload Design/Files</label>
+                <input type="file" id="doc" name="doc" />
+              </div>
+
+              <div class="form-group">
+                <label for="message">Requirements/Details</label>
                 <textarea
                   id="message"
                   name="message"
@@ -98,49 +132,6 @@
               <button type="submit" class="cta-button">Send Message</button>
             </form>
           </div>
-
-          <!-- Contact Info -->
-          <div class="contact-info">
-            <div class="info-card glass-effect fade-in-up">
-              <i class="fas fa-map-marker-alt"></i>
-              <h3>Address</h3>
-              <p>
-                Plot no. 05. Street W-6 <br />
-                Rawat <br />
-                Rawalpindi
-              </p>
-            </div>
-            <div class="info-card glass-effect fade-in-up">
-              <i class="fas fa-phone"></i>
-              <h3>Phone</h3>
-              <p>+92-323-8560567</p>
-            </div>
-            <div class="info-card glass-effect fade-in-up">
-              <i class="fas fa-envelope"></i>
-              <h3>Email</h3>
-              <p>info@tplustechnologies.com</p>
-            </div>
-            <div class="info-card glass-effect fade-in-up">
-              <i class="fas fa-clock"></i>
-              <h3>Business Hours</h3>
-              <p>Mon - Fri: 9:00 AM - 6:00 PM<br />Sat: 10:00 AM - 4:00 PM</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Map Section -->
-        <div class="map-section fade-in-up">
-          <h2 class="section-title">Find Us On The Map</h2>
-          <iframe
-            src="https://www.google.com/maps?q=33.5115566,73.2329221&z=17&output=embed"
-            width="100%"
-            height="450"
-            style="border: 0; border-radius: 12px"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
         </div>
       </div>
     </section>

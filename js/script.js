@@ -15,6 +15,14 @@ menuButton.addEventListener("click", () => {
     : "fas fa-bars";
 });
 
+// Make service cards clickable
+document.querySelectorAll(".service-card-1").forEach((card) => {
+  card.addEventListener("click", () => {
+    const link = card.getAttribute("data-link");
+    if (link) window.location.href = link;
+  });
+});
+
 const dropdown = document.querySelector(".dropdown");
 
 dropdown.addEventListener("click", (e) => {
