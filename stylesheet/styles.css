@@ -15,8 +15,6 @@
   background: var(--bg-primary);
 }
 
-
-
 /* Restricted color palette: White, Black, and Blue shades only */
 :root {
   /* === Blue & White Dark Theme Palette === */
@@ -61,7 +59,9 @@
   --glass-bg: rgba(255, 255, 255, 0.05);
   --glass-border: rgba(0, 153, 204, 0.15);
   --border-color: rgba(0, 153, 204, 0.2);
-
+  --hero-fade-1: #010c18c4;
+  --hero-fade-2: #010c183a;
+  --hero-fade-3: #010c1811;
   /* === Blob Animation Colors (DARK MODE) === */
   /* --blob-primary: rgba(87, 197, 201, 0.959);
   --blob-blur: 20px; */
@@ -79,7 +79,9 @@ body.light-mode {
   --glass-bg: rgba(0, 153, 204, 0.03);
   --glass-border: rgba(0, 153, 204, 0.12);
   --border-color: rgba(0, 153, 204, 0.15);
-
+  --hero-fade-1: #ffffffe0;
+  --hero-fade-2: #ffffff36;
+  --hero-fade-3: #ffffff15;
   /* === Blob Animation Colors (LIGHT MODE FIX) === */
   /* --blob-primary: #4fc2f02f;
   --blob-blur: 20px; */
@@ -117,8 +119,6 @@ body {
   /* animation: gradientShift 35s ease-in-out infinite; */
   position: relative;
 }
-
-
 
 /* === Keyframes === */
 
@@ -313,6 +313,85 @@ body.light-mode .theme-switcher:hover {
   text-shadow: 0 0 10px rgba(0, 153, 204, 0.5);
 }
 
+/* === Dropdown Wrapper === */
+.dropdown {
+  position: relative;
+}
+
+/* === Dropdown Menu (Hidden by Default) === */
+.dropdown-menu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+  border: 1px solid var(--glass-border);
+  min-width: 180px;
+  padding: 0.5rem 0;
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.35s cubic-bezier(0.25, 1, 0.5, 1);
+  box-shadow: 0 8px 25px rgba(0, 153, 204, 0.25);
+  z-index: 999;
+}
+
+/* === Dropdown Items === */
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.25s ease;
+}
+
+.dropdown-menu li a:hover {
+  background: rgba(0, 153, 204, 0.1);
+  color: var(--accent-primary);
+}
+
+/* === Show on Hover (Desktop) === */
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* === Responsive Fixes for Mobile View === */
+@media (max-width: 768px) {
+  .dropdown {
+    width: 100%;
+  }
+
+  /* Make dropdown static instead of absolute for stacking layout */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+    margin-top: 0.5rem;
+    display: none; /* hidden by default for mobile */
+  }
+
+  .dropdown-menu li a {
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    margin-bottom: 6px;
+  }
+
+  /* Show when parent .dropdown has 'open' class (via JS toggle) */
+  .dropdown.open .dropdown-menu {
+    display: block;
+  }
+}
+
 /* --- NEW MOBILE MENU BUTTON STYLES --- */
 .mobile-menu-button {
   display: none; /* Hidden by default on desktop */
@@ -416,7 +495,7 @@ body.light-mode .theme-switcher:hover {
 
 /* About Hero */
 .hero-about {
-  height: 50vh;
+  height: 90vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -425,7 +504,7 @@ body.light-mode .theme-switcher:hover {
   position: relative;
   overflow: hidden;
   margin: 60px auto;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-about .hero-content {
@@ -434,6 +513,7 @@ body.light-mode .theme-switcher:hover {
   flex-direction: column;
   justify-content: center;
   z-index: 2;
+  margin-left: 2rem;
 }
 
 .hero-about .hero-title {
@@ -452,7 +532,7 @@ body.light-mode .theme-switcher:hover {
 .hero-about .hero-image {
   flex: 1;
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -461,7 +541,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Services Hero */
 .hero-services {
-  height: 50vh;
+  height: 90vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -470,7 +550,7 @@ body.light-mode .theme-switcher:hover {
   position: relative;
   overflow: hidden;
   margin: 60px auto;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-services .hero-content {
@@ -479,6 +559,7 @@ body.light-mode .theme-switcher:hover {
   flex-direction: column;
   justify-content: center;
   z-index: 2;
+  margin-left: 2rem;
 }
 
 .hero-services .hero-title {
@@ -497,7 +578,7 @@ body.light-mode .theme-switcher:hover {
 .hero-services .hero-image {
   flex: 1;
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -506,7 +587,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Expertise Hero */
 .hero-expertise {
-  height: 50vh;
+  height: 90vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -515,7 +596,7 @@ body.light-mode .theme-switcher:hover {
   position: relative;
   overflow: hidden;
   margin: 60px auto;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-expertise .hero-content {
@@ -524,6 +605,7 @@ body.light-mode .theme-switcher:hover {
   flex-direction: column;
   justify-content: center;
   z-index: 2;
+  margin-left: 2rem;
 }
 
 .hero-expertise .hero-title {
@@ -542,7 +624,7 @@ body.light-mode .theme-switcher:hover {
 .hero-expertise .hero-image {
   flex: 1;
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -551,7 +633,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Contact Hero */
 .hero-contact {
-  height: 50vh;
+  height: 90vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -560,7 +642,7 @@ body.light-mode .theme-switcher:hover {
   position: relative;
   overflow: hidden;
   margin: 60px auto;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 .hero-contact .hero-content {
@@ -569,6 +651,7 @@ body.light-mode .theme-switcher:hover {
   flex-direction: column;
   justify-content: center;
   z-index: 2;
+  margin-left: 2rem;
 }
 
 .hero-contact .hero-title {
@@ -587,7 +670,7 @@ body.light-mode .theme-switcher:hover {
 .hero-contact .hero-image {
   flex: 1;
   width: 100%;
-  height: 100%;
+  height: 50%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -1013,7 +1096,6 @@ body.light-mode .theme-switcher:hover {
   height: 100%;
 }
 
-
 .info-card i {
   font-size: 2rem;
   color: var(--accent-primary);
@@ -1202,6 +1284,7 @@ body.light-mode .theme-switcher:hover {
   .hero-services,
   .hero-expertise,
   .hero-contact {
+    /* margin-top: 5rem; */
     gap: 2rem;
     height: auto;
     min-height: 70vh;

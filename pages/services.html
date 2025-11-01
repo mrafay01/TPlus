@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Services - T-Plus Technologies</title>
     <link rel="stylesheet" href="../stylesheet/styles.css" />
+    <link rel="stylesheet" href="../stylesheet/services.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,13 +24,26 @@
       <div class="nav-container">
         <div class="nav-logo">
           <a href="../index.html"
-            ><img class="logo" src="../images/LOGO.png" alt="T-Plus Technologies"
+            ><img
+              class="logo"
+              src="../images/LOGO.png"
+              alt="T-Plus Technologies"
           /></a>
         </div>
         <ul class="nav-menu">
-          <li><a href="../index.html" class="nav-link">Home</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="../index.html" class="nav-link active">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li class="dropdown">
+            <a href="services.html" class="nav-link active">Services ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Mechanical</a></li>
+              <li><a href="#">Electronics</a></li>
+              <li><a href="#">Software Services</a></li>
+              <li><a href="#">IOT Services</a></li>
+              <li><a href="#">General Supply Order</a></li>
+              <li><a href="#">Industrial Automation</a></li>
+            </ul>
+          </li>
           <li><a href="expertise.html" class="nav-link">Expertise</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
@@ -44,107 +58,138 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-services">
-      <div class="hero-content fade-in-up">
-        <h1 class="hero-title">Our Services</h1>
-        <p class="hero-subtitle">Comprehensive Electro-Mechanical Solutions</p>
+    <section class="heero-services">
+      <div class="heero-content fade-in-up">
+        <h1 class="heero-title">Our Services</h1>
+        <p class="heero-subtitle">
+          We provide end-to-end <b>electro-mechanical solutions</b>, from custom
+          design and engineering to manufacturing, installation, and
+          maintenance. Our expert engineers create tailored systems using
+          advanced <b>CAD design</b>, <b>Simulations</b>, and
+          <b>Prototyping</b>, ensuring top performance and innovation.
+        </p>
       </div>
-      <img src="../images/11.jpg" alt="Services Hero" class="hero-image" />
+      <img src="../images/11.jpg" alt="Services Hero" class="heero-image" />
+      <a href="#next-section" class="services-scroll-down">
+        <span></span>
+      </a>
     </section>
 
     <!-- Services Content -->
-    <section class="content-section">
-      <div class="container">
-        <h2 class="section-title fade-in-up">What We Offer</h2>
+    <section class="service-content-section" id="next-section">
+      <h2 class="service-section-title fade-in-up">What We Offer</h2>
+      <div class="service-container">
 
         <!-- Service 1 -->
-        <div class="service-card glass-effect fade-in-up">
-          <div class="service-content">
-            <h3>Custom Design & Engineering</h3>
-            <p>
-              Our expert engineers work closely with you to design custom
-              electro-mechanical systems tailored to your specific requirements.
-              From concept to prototype, we handle every detail with precision
-              and innovation.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> CAD Design & Simulation</li>
-              <li><i class="fas fa-check"></i> Prototype Development</li>
-              <li><i class="fas fa-check"></i> Performance Analysis</li>
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>Mechanical Services</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> CNCs</li>
+              <li><i class="fas fa-check"></i> Lasers</li>
+              <li><i class="fas fa-check"></i> 3D Printing</li>
+              <li><i class="fas fa-check"></i> EDM Wire</li>
+              <li><i class="fas fa-check"></i> Sheet Metal</li>
+              <li><i class="fas fa-check"></i> M. Lathe & M. Milling</li>
             </ul>
           </div>
           <img
             src="../images/PCB-Designing.jpg"
             alt="Design Service"
-            class="service-image"
+            class="service-image-1"
           />
         </div>
 
         <!-- Service 2 -->
-        <div class="service-card glass-effect fade-in-up">
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>Electronics Services</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> PCB Manufacturing</li>
+              <li><i class="fas fa-check"></i> PCB Designing</li>
+              <li><i class="fas fa-check"></i> Prototyping</li>
+            </ul>
+          </div>
           <img
             src="../images/CNC-1.jpeg"
             alt="Manufacturing Service"
-            class="service-image"
+            class="service-image-1"
           />
-          <div class="service-content">
-            <h3>Manufacturing & Assembly</h3>
-            <p>
-              With state-of-the-art manufacturing facilities, we produce
-              high-quality electro-mechanical components and systems. Our
-              quality control processes ensure every product meets the highest
-              standards.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Precision Manufacturing</li>
-              <li><i class="fas fa-check"></i> Quality Assurance</li>
-              <li><i class="fas fa-check"></i> Scalable Production</li>
-            </ul>
-          </div>
         </div>
 
         <!-- Service 3 -->
-        <div class="service-card glass-effect fade-in-up">
-          <div class="service-content">
-            <h3>Installation & Integration</h3>
-            <p>
-              Our experienced technicians ensure seamless installation and
-              integration of your systems. We provide comprehensive support to
-              minimize downtime and maximize efficiency.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> On-site Installation</li>
-              <li><i class="fas fa-check"></i> System Integration</li>
-              <li><i class="fas fa-check"></i> Testing & Validation</li>
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>Software Services</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> Websites & Web-Apps</li>
+              <li><i class="fas fa-check"></i> ERP systems</li>
+              <li><i class="fas fa-check"></i> App Development</li>
+              <li><i class="fas fa-check"></i> AI ChatBots</li>
+              <li><i class="fas fa-check"></i> Discord Bots</li>
+              <li><i class="fas fa-check"></i> E-Commerce Stores</li>
             </ul>
           </div>
           <img
             src="../images/installation.png"
             alt="Installation Service"
-            class="service-image"
+            class="service-image-1"
           />
         </div>
 
         <!-- Service 4 -->
-        <div class="service-card glass-effect fade-in-up">
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>IOT Services</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> Smart Home Solutions</li>
+              <li><i class="fas fa-check"></i> Fleet Management</li>
+              <li><i class="fas fa-check"></i> Custom IoT Solutions</li>
+            </ul>
+          </div>
           <img
             src="../images/maintain.png"
             alt="Maintenance Service"
-            class="service-image"
+            class="service-image-1"
           />
-          <div class="service-content">
-            <h3>Maintenance & Support</h3>
-            <p>
-              Keep your systems running at peak performance with our
-              comprehensive maintenance and support services. We offer
-              preventive maintenance, repairs, and 24/7 technical support.
-            </p>
-            <ul class="service-features">
-              <li><i class="fas fa-check"></i> Preventive Maintenance</li>
-              <li><i class="fas fa-check"></i> Emergency Repairs</li>
-              <li><i class="fas fa-check"></i> 24/7 Support</li>
+        </div>
+
+        <!-- Service 5 -->
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>General Supply Services</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> Mechanical</li>
+              <li><i class="fas fa-check"></i> Electronics</li>
+              <li><i class="fas fa-check"></i> Electrical</li>
+              <li><i class="fas fa-check"></i> CNC-Machines</li>
+              <li><i class="fas fa-check"></i> 3D Printers</li>
             </ul>
           </div>
+          <img
+            src="../images/maintain.png"
+            alt="Maintenance Service"
+            class="service-image-1"
+          />
+        </div>
+
+        <!-- Service 6 -->
+        <div class="service-card-1 glass-effect fade-in-up">
+          <div class="service-content-1">
+            <h3>Industrial Automation</h3>
+            <ul class="service-features-1">
+              <li><i class="fas fa-check"></i> Machine Automation</li>
+              <li><i class="fas fa-check"></i> Machine Repairing</li>
+              <li><i class="fas fa-check"></i> Upgradation Solutions</li>
+              <li><i class="fas fa-check"></i> New Installation Solutions</li>
+              <li><i class="fas fa-check"></i> Custom Automation Solutions</li>
+            </ul>
+          </div>
+          <img
+            src="../images/maintain.png"
+            alt="Maintenance Service"
+            class="service-image-1"
+          />
         </div>
       </div>
     </section>
