@@ -438,7 +438,7 @@ body.light-mode .theme-switcher:hover {
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  margin-top: 60px;
+  margin-top: 30px;
 }
 
 .hero-index .hero-wrapper {
@@ -478,8 +478,8 @@ body.light-mode .theme-switcher:hover {
 }
 
 .hero-index .hero-title {
-  font-size: 3.5rem;
-  font-weight: 900;
+  font-size: 3rem;
+  font-weight: 800;
   margin-bottom: 1rem;
   color: var(--accent-primary);
   letter-spacing: -1px;
@@ -495,7 +495,7 @@ body.light-mode .theme-switcher:hover {
 
 /* About Hero */
 .hero-about {
-  height: 90vh;
+  height: 100vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -532,7 +532,7 @@ body.light-mode .theme-switcher:hover {
 .hero-about .hero-image {
   flex: 1;
   width: 100%;
-  height: 50%;
+  height: 45%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -749,13 +749,14 @@ body.light-mode .theme-switcher:hover {
   align-items: center;
   justify-content: center;
   margin: 0px auto 50px auto;
+  max-width: 1000px;
   width: 80%;
   text-align: center;
 }
 
 .about-card h3 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--accent-primary);
   font-weight: 800;
 }
@@ -765,12 +766,14 @@ body.light-mode .theme-switcher:hover {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1rem;
+  text-align: justify;
+  font-size: 1.15rem;
 }
 
 .home-stats {
   max-width: 1400px;
-  margin: auto;
-  padding: 0 2.5rem;
+  margin: 1rem auto;
+  width: 90%;
 }
 
 /* Story Section */
@@ -796,6 +799,145 @@ body.light-mode .theme-switcher:hover {
   color: var(--text-secondary);
   line-height: 1.8;
   margin-bottom: 1rem;
+}
+
+.client-carousel-section {
+  max-width: 1450px;
+  margin: 3rem auto;
+}
+
+.client-carousel-section h2 {
+  font-size: 2.5rem;
+  margin: 4rem auto 2rem auto;
+  color: var(--accent-primary);
+  font-weight: 800;
+  text-align: center;
+}
+
+/* === Client Logo Carousel (Matches Dark Blue Theme) === */
+.theme-carousel-section {
+  position: relative;
+  width: 90%;
+  overflow: hidden;
+  background: var(--glass-bg);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 0 30px rgba(0, 153, 204, 0.08);
+  padding: 20px 0;
+  margin: 20px auto;
+}
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 50px;
+  animation: scrollLogos 12s linear infinite;
+}
+
+.carousel-item {
+  flex: 0 0 calc(25% - 50px); /* Show 4 logos */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: drop-shadow(0 0 10px rgba(0, 153, 204, 0.15));
+  transition: all 0.4s ease;
+}
+
+.carousel-item img {
+  width: 140px;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: all 0.3s ease;
+  filter: grayscale(100%) brightness(1.2);
+}
+
+.carousel-item img:hover {
+  opacity: 1;
+  filter: grayscale(0%) drop-shadow(0 0 15px var(--accent-primary));
+  transform: scale(1.05);
+}
+
+/* === Smooth Infinite Scroll === */
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === Section Heading (Optional, if you have one) === */
+.theme-carousel-section h3 {
+  text-align: center;
+  color: var(--accent-primary);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 15px rgba(0, 153, 204, 0.3);
+}
+
+/* === Subtle Glow at Edges for Better Focus === */
+.theme-carousel-section::before,
+.theme-carousel-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 120px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.theme-carousel-section::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--bg-secondary) 0%,
+    transparent 100%
+  );
+}
+
+.theme-carousel-section::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--bg-secondary) 0%,
+    transparent 100%
+  );
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1024px) {
+  .carousel-item {
+    flex: 0 0 calc(33.333% - 40px); /* 3 logos on tablet */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 30px); /* 2 logos on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .carousel-item {
+    flex: 0 0 100%; /* 1 logo on small screens */
+  }
+
+  .carousel-item img {
+    width: 110px;
+  }
+
+  .theme-carousel-section {
+    width: 90%;
+  }
 }
 
 /* Summary Cards */
@@ -836,6 +978,17 @@ body.light-mode .theme-switcher:hover {
   margin-bottom: 1.5rem;
 }
 
+.summary-card-content ul {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+.summary-card-content li {
+  margin-left: 20px;
+  list-style: circle;
+}
+
 .summary-link {
   color: var(--accent-primary);
   text-decoration: none;
@@ -856,9 +1009,15 @@ body.light-mode .theme-switcher:hover {
   box-shadow: 0 0 30px rgba(0, 153, 204, 0.2);
 }
 
+.contact {
+  max-width: 1400px;
+  margin: auto;
+  width: 90%;
+}
+
 /* Features Grid */
 .features-section {
-  padding: 4rem 2rem;
+  padding: 3rem 2rem 4rem 2rem;
 }
 
 .features-grid {
@@ -1286,9 +1445,9 @@ body.light-mode .theme-switcher:hover {
   .hero-contact {
     /* margin-top: 5rem; */
     gap: 2rem;
-    height: auto;
-    min-height: 70vh;
-    padding-top: 120px;
+    /* height: auto; */
+    min-height: 100vh;
+    padding: 120px 20px;
     flex-direction: column;
     text-align: center;
   }
@@ -1313,7 +1472,11 @@ body.light-mode .theme-switcher:hover {
   .contact-grid,
   .service-card {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2.5rem;
+  }
+
+  .mobile-text {
+    display: none;
   }
 }
 
@@ -1500,5 +1663,9 @@ body.light-mode .theme-switcher:hover {
 
   .social-links {
     justify-content: center;
+  }
+
+  .tab-text {
+    display: none;
   }
 }
