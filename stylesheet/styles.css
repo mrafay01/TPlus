@@ -503,7 +503,7 @@ body.light-mode .theme-switcher:hover {
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  margin: 60px auto;
+  margin: auto;
   gap: 2rem;
 }
 
@@ -587,7 +587,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Expertise Hero */
 .hero-expertise {
-  height: 90vh;
+  height: 100vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -595,7 +595,7 @@ body.light-mode .theme-switcher:hover {
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  margin: 60px auto;
+  margin: auto;
   gap: 2rem;
 }
 
@@ -624,7 +624,7 @@ body.light-mode .theme-switcher:hover {
 .hero-expertise .hero-image {
   flex: 1;
   width: 100%;
-  height: 50%;
+  height: 45%;
   object-fit: cover;
   border-radius: 15px;
   border: 2px solid var(--border-color);
@@ -633,7 +633,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Contact Hero */
 .hero-contact {
-  height: 90vh;
+  height: 100vh;
   max-width: 1450px;
   display: flex;
   align-items: center;
@@ -641,7 +641,7 @@ body.light-mode .theme-switcher:hover {
   padding: 2rem;
   position: relative;
   overflow: hidden;
-  margin: 60px auto;
+  margin: auto;
   gap: 2rem;
 }
 
@@ -713,7 +713,7 @@ body.light-mode .theme-switcher:hover {
 
 /* Content Section */
 .content-section {
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
 }
 
 .content-grid {
@@ -782,14 +782,14 @@ body.light-mode .theme-switcher:hover {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 4rem;
-  width: 80%;
+  margin: 0 auto 10rem;
+  width: 85%;
   text-align: center;
 }
 
 .story-text h2 {
   font-size: 2rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   color: var(--accent-primary);
   font-weight: 800;
 }
@@ -801,142 +801,140 @@ body.light-mode .theme-switcher:hover {
   margin-bottom: 1rem;
 }
 
+/* === Client Carousel Section === */
 .client-carousel-section {
-  max-width: 1450px;
-  margin: 3rem auto;
+  text-align: center;
+  padding: 3rem 1rem;
+  background: var(--glass-bg);
+  border-top: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--glass-border);
+  overflow: hidden;
+  position: relative;
+  margin: 8rem 0 4rem 0;
 }
 
 .client-carousel-section h2 {
-  font-size: 2.5rem;
-  margin: 4rem auto 2rem auto;
+  font-size: 2rem;
   color: var(--accent-primary);
-  font-weight: 800;
-  text-align: center;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px rgba(0, 153, 204, 0.4);
 }
 
-/* === Client Logo Carousel (Matches Dark Blue Theme) === */
-.theme-carousel-section {
-  position: relative;
-  width: 90%;
-  overflow: hidden;
-  background: var(--glass-bg);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
-  box-shadow: 0 0 30px rgba(0, 153, 204, 0.08);
-  padding: 20px 0;
-  margin: 20px auto;
-}
-
+/* === Carousel Container === */
 .carousel-container {
-  overflow: hidden;
-  width: 100%;
+  margin: auto;
   position: relative;
+  max-width: 1400px;
+  width: 100%;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  gap: 50px;
-  animation: scrollLogos 12s linear infinite;
+  animation: scrollCarousel 23s linear infinite;
+  will-change: transform;
 }
 
 .carousel-item {
-  flex: 0 0 calc(25% - 50px); /* Show 4 logos */
+  flex: 0 0 auto;
+  width: 220px;
+  height: 160px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  filter: drop-shadow(0 0 10px rgba(0, 153, 204, 0.15));
-  transition: all 0.4s ease;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--glass-border);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 153, 204, 0.15);
+  transition: all 0.3s ease;
+  margin-left: 8rem;
+}
+
+.carousel-item:hover {
+  transform: scale(1.08);
+  border-color: var(--accent-primary);
+  box-shadow: 0 0 25px rgba(0, 153, 204, 0.4);
 }
 
 .carousel-item img {
-  width: 140px;
-  height: auto;
+  max-width: 100%;
+  max-height: 80%;
   object-fit: contain;
-  opacity: 0.85;
+  filter: brightness(0.95) contrast(1.05);
   transition: all 0.3s ease;
-  filter: grayscale(100%) brightness(1.2);
 }
 
-.carousel-item img:hover {
-  opacity: 1;
-  filter: grayscale(0%) drop-shadow(0 0 15px var(--accent-primary));
-  transform: scale(1.05);
+.carousel-item:hover img {
+  filter: brightness(1.1) contrast(1.1);
 }
 
-/* === Smooth Infinite Scroll === */
-@keyframes scrollLogos {
+/* === Keyframes for smooth continuous scroll === */
+@keyframes scrollCarousel {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-300%);
   }
 }
 
-/* === Section Heading (Optional, if you have one) === */
-.theme-carousel-section h3 {
-  text-align: center;
-  color: var(--accent-primary);
-  font-size: 1.8rem;
-  font-weight: 700;
-  margin-bottom: 2rem;
-  text-shadow: 0 0 15px rgba(0, 153, 204, 0.3);
-}
-
-/* === Subtle Glow at Edges for Better Focus === */
-.theme-carousel-section::before,
-.theme-carousel-section::after {
+/* === Navigation Buttons === */
+.carousel-container::before,
+.carousel-container::after {
   content: "";
   position: absolute;
   top: 0;
-  width: 120px;
+  width: 10%;
   height: 100%;
   z-index: 2;
   pointer-events: none;
 }
 
-.theme-carousel-section::before {
+.carousel-container::before {
   left: 0;
   background: linear-gradient(
     to right,
-    var(--bg-secondary) 0%,
+    var(--bg-tertiary) 0%,
     transparent 100%
   );
 }
 
-.theme-carousel-section::after {
+.carousel-container::after {
   right: 0;
-  background: linear-gradient(
-    to left,
-    var(--bg-secondary) 0%,
-    transparent 100%
-  );
+  background: linear-gradient(to left, var(--bg-tertiary) 0%, transparent 100%);
 }
 
-/* === Responsive Adjustments === */
-@media (max-width: 1024px) {
+/* === Responsive Layout === */
+@media (max-width: 1200px) {
   .carousel-item {
-    flex: 0 0 calc(33.333% - 40px); /* 3 logos on tablet */
+    width: 160px;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-item {
+    width: 140px;
+  }
+  .carousel-track {
+    animation: scrollCarousel 12s linear infinite;
   }
 }
 
 @media (max-width: 768px) {
   .carousel-item {
-    flex: 0 0 calc(50% - 30px); /* 2 logos on mobile */
+    width: 160px;
+  }
+  .carousel-track {
+    animation: scrollCarousel 10s linear infinite;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .carousel-item {
-    flex: 0 0 100%; /* 1 logo on small screens */
+    width: 150px;
   }
-
-  .carousel-item img {
-    width: 110px;
-  }
-
-  .theme-carousel-section {
-    width: 90%;
+  .carousel-track {
+    animation: scrollCarousel 8s linear infinite;
   }
 }
 
@@ -1314,12 +1312,29 @@ body.light-mode .theme-switcher:hover {
 }
 
 .footer-content {
+  text-align: center;
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
   margin-bottom: 2rem;
+  justify-items: center; /* Centers each grid item */
+}
+
+.footer-section {
+  text-align: center; /* Centers text inside each section */
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-section h3 {
+  font-size: 1.5rem;
+  color: var(--accent-primary);
 }
 
 .footer-section h4 {

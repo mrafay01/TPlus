@@ -15,14 +15,6 @@ menuButton.addEventListener("click", () => {
     : "fas fa-bars";
 });
 
-// Make service cards clickable
-document.querySelectorAll(".service-card-1").forEach((card) => {
-  card.addEventListener("click", () => {
-    const link = card.getAttribute("data-link");
-    if (link) window.location.href = link;
-  });
-});
-
 const dropdown = document.querySelector(".dropdown");
 
 dropdown.addEventListener("click", (e) => {
@@ -168,3 +160,52 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const track = document.querySelector(".carousel-track");
+
+let scrollAmount = 0;
+const scrollStep = 150;
+
+// Pause animation on hover
+track.addEventListener("mouseenter", () => {
+  track.style.animationPlayState = "paused";
+});
+track.addEventListener("mouseleave", () => {
+  track.style.animationPlayState = "running";
+});
+
+// Number Counter Animation
+document.addEventListener("DOMContentLoaded", () => {
+  const counters = document.querySelectorAll(".stat-card h3");
+
+  const animateValue = (el, start, end, duration) => {
+    const startTime = performance.now();
+
+    const step = (currentTime) => {
+      const progress = Math.min((currentTime - startTime) / duration, 1);
+      const value = Math.floor(progress * (end - start) + start);
+      el.textContent = value + (el.textContent.includes("+") ? "+" : "");
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const h3 = entry.target.querySelector("h3");
+          if (!h3.classList.contains("counted")) {
+            h3.classList.add("counted");
+            const target = parseInt(h3.getAttribute("data-target"));
+            animateValue(h3, 0, target, 1500);
+          }
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+
+  document.querySelectorAll(".stat-card").forEach((card) => observer.observe(card));
+});
