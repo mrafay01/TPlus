@@ -169,7 +169,6 @@
   flex-direction: column;
   justify-content: space-between;
   overflow: hidden;
-  cursor: pointer;
 }
 
 /* Make whole card clickable */
