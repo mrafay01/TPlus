@@ -831,7 +831,7 @@ body.light-mode .theme-switcher:hover {
 
 .carousel-track {
   display: flex;
-  animation: scrollCarousel 23s linear infinite;
+  animation: scrollCarousel 30s linear infinite;
   will-change: transform;
 }
 
@@ -916,7 +916,7 @@ body.light-mode .theme-switcher:hover {
     width: 140px;
   }
   .carousel-track {
-    animation: scrollCarousel 12s linear infinite;
+    animation: scrollCarousel 18s linear infinite;
   }
 }
 
@@ -925,7 +925,7 @@ body.light-mode .theme-switcher:hover {
     width: 160px;
   }
   .carousel-track {
-    animation: scrollCarousel 10s linear infinite;
+    animation: scrollCarousel 14s linear infinite;
   }
 }
 
@@ -934,7 +934,7 @@ body.light-mode .theme-switcher:hover {
     width: 150px;
   }
   .carousel-track {
-    animation: scrollCarousel 8s linear infinite;
+    animation: scrollCarousel 12s linear infinite;
   }
 }
 

@@ -5,26 +5,30 @@ const htmlElement = document.documentElement;
 const menuButton = document.querySelector(".mobile-menu-button");
 const navMenu = document.querySelector(".nav-menu");
 
+// === Mobile Menu Toggle ===
 menuButton.addEventListener("click", () => {
   navMenu.classList.toggle("open");
   const isExpanded = navMenu.classList.contains("open");
   menuButton.setAttribute("aria-expanded", isExpanded);
-  // Optional: Toggle the icon from bars to close (X)
+
+  // Toggle icon between bars and close (X)
   menuButton.querySelector("i").className = isExpanded
     ? "fas fa-times"
     : "fas fa-bars";
 });
 
-const dropdown = document.querySelector(".dropdown");
-
-dropdown.addEventListener("click", (e) => {
-  if (window.innerWidth <= 768) {
-    e.preventDefault();
-    dropdown.classList.toggle("open");
-  }
+// === Dropdown Menu Fix for Mobile ===
+document.querySelectorAll(".dropdown > a").forEach((dropToggle) => {
+  dropToggle.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768) {
+      e.preventDefault(); // prevent immediate navigation
+      const parent = dropToggle.parentElement;
+      parent.classList.toggle("open");
+    }
+  });
 });
 
-// Check for saved theme preference or default to dark mode
+// === Theme Preference ===
 const currentTheme = localStorage.getItem("theme") || "dark";
 if (currentTheme === "light") {
   document.body.classList.add("light-mode");
@@ -40,7 +44,7 @@ themeSwitcher.addEventListener("click", () => {
     : '<i class="fas fa-moon"></i>';
 });
 
-// Navbar Hide/Show on Scroll
+// === Navbar Hide/Show on Scroll ===
 let lastScrollTop = 0;
 const navbar = document.querySelector(".navbar");
 
@@ -48,16 +52,14 @@ window.addEventListener("scroll", () => {
   let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
   if (scrollTop > lastScrollTop) {
-    // Scrolling down
     navbar.classList.add("hide");
   } else {
-    // Scrolling up
     navbar.classList.remove("hide");
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
-// Scroll Animation
+// === Scroll Animation ===
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -100px 0px",
@@ -71,12 +73,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all elements with scroll-animate class
 document.querySelectorAll(".scroll-animate").forEach((el) => {
   observer.observe(el);
 });
 
-// Add scroll-animate class to elements on page load
 window.addEventListener("load", () => {
   document
     .querySelectorAll(
@@ -88,7 +88,7 @@ window.addEventListener("load", () => {
     });
 });
 
-// Contact Form
+// === Contact Form ===
 const contactForm = document.getElementById("contactForm");
 if (contactForm) {
   contactForm.addEventListener("submit", (e) => {
@@ -98,23 +98,19 @@ if (contactForm) {
   });
 }
 
-// Initialize Map
+// === Map Initialization ===
 function initMap() {
   const mapContainer = document.getElementById("map");
   if (!mapContainer) return;
 
-  // T-Plus Technologies location (Silicon Valley, CA)
   const location = [37.3382, -121.8863];
-
   const map = L.map("map").setView(location, 13);
 
-  // Custom tile layer with dark theme
   L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
     attribution: "&copy; OpenStreetMap contributors &copy; CARTO",
     maxZoom: 19,
   }).addTo(map);
 
-  // Add marker
   const marker = L.marker(location).addTo(map);
   marker
     .bindPopup(
@@ -122,33 +118,31 @@ function initMap() {
     )
     .openPopup();
 
-  // Add custom styling to map
   const style = document.createElement("style");
   style.textContent = `
-        .leaflet-popup-content-wrapper {
-            background: rgba(10, 14, 39, 0.95) !important;
-            border: 1px solid rgba(0, 217, 255, 0.3) !important;
-            border-radius: 10px !important;
-            box-shadow: 0 0 20px rgba(0, 217, 255, 0.2) !important;
-        }
-        .leaflet-popup-content {
-            color: #e0e6ff !important;
-        }
-        .leaflet-popup-tip {
-            background: rgba(10, 14, 39, 0.95) !important;
-        }
-    `;
+    .leaflet-popup-content-wrapper {
+        background: rgba(10, 14, 39, 0.95) !important;
+        border: 1px solid rgba(0, 217, 255, 0.3) !important;
+        border-radius: 10px !important;
+        box-shadow: 0 0 20px rgba(0, 217, 255, 0.2) !important;
+    }
+    .leaflet-popup-content {
+        color: #e0e6ff !important;
+    }
+    .leaflet-popup-tip {
+        background: rgba(10, 14, 39, 0.95) !important;
+    }
+  `;
   document.head.appendChild(style);
 }
 
-// Initialize map when page loads
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initMap);
 } else {
   initMap();
 }
 
-// Active nav link based on current page
+// === Active Nav Link ===
 document.addEventListener("DOMContentLoaded", () => {
   const currentPage = window.location.pathname.split("/").pop() || "home.html";
   document.querySelectorAll(".nav-link").forEach((link) => {
@@ -160,20 +154,18 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// === Client Carousel Hover Pause ===
 const track = document.querySelector(".carousel-track");
+if (track) {
+  track.addEventListener("mouseenter", () => {
+    track.style.animationPlayState = "paused";
+  });
+  track.addEventListener("mouseleave", () => {
+    track.style.animationPlayState = "running";
+  });
+}
 
-let scrollAmount = 0;
-const scrollStep = 150;
-
-// Pause animation on hover
-track.addEventListener("mouseenter", () => {
-  track.style.animationPlayState = "paused";
-});
-track.addEventListener("mouseleave", () => {
-  track.style.animationPlayState = "running";
-});
-
-// Number Counter Animation
+// === Number Counter Animation ===
 document.addEventListener("DOMContentLoaded", () => {
   const counters = document.querySelectorAll(".stat-card h3");
 
@@ -190,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     requestAnimationFrame(step);
   };
 
-  const observer = new IntersectionObserver(
+  const counterObserver = new IntersectionObserver(
     (entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -207,5 +199,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { threshold: 0.5 }
   );
 
-  document.querySelectorAll(".stat-card").forEach((card) => observer.observe(card));
+  document
+    .querySelectorAll(".stat-card")
+    .forEach((card) => counterObserver.observe(card));
 });
