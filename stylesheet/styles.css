@@ -832,7 +832,7 @@ body.light-mode .theme-switcher:hover {
 .carousel-track {
   display: flex;
   align-items: center;
-  animation: scrollCarousel 30s linear infinite;
+  animation: scrollCarousel 35s linear infinite;
   will-change: transform;
 }
 
@@ -848,7 +848,7 @@ body.light-mode .theme-switcher:hover {
 
 .carousel-item img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 140px;
   object-fit: contain;
   filter: brightness(0.95) contrast(1.05);
   transition: all 0.3s ease;
@@ -909,7 +909,7 @@ body.light-mode .theme-switcher:hover {
     margin: 0 5rem;
   }
   .carousel-track {
-    animation: scrollCarousel 20s linear infinite;
+    animation: scrollCarousel 30s linear infinite;
   }
 }
 
@@ -919,7 +919,7 @@ body.light-mode .theme-switcher:hover {
     margin: 0 4.5rem;
   }
   .carousel-track {
-    animation: scrollCarousel 18s linear infinite;
+    animation: scrollCarousel 24s linear infinite;
   }
 }
 
@@ -929,7 +929,7 @@ body.light-mode .theme-switcher:hover {
     margin: 0 3.5rem;
   }
   .carousel-track {
-    animation: scrollCarousel 16s linear infinite;
+    animation: scrollCarousel 20s linear infinite;
   }
 }
 
@@ -1499,40 +1499,6 @@ body.light-mode .theme-switcher:hover {
     max-height: 90vh; /* ensures the whole nav never overflows screen */
     overflow-y: auto;
   }
-
-  /* Keep dropdowns scrollable but contained */
-  .dropdown-menu {
-    position: static !important;
-    max-height: 300px;
-    overflow-y: auto;
-    background: var(--bg-secondary);
-    border-radius: 8px;
-    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 0.5rem;
-    padding: 0.5rem 0;
-    z-index: 1002;
-    scroll-behavior: smooth;
-  }
-
-  .dropdown-menu::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  .dropdown-menu::-webkit-scrollbar-thumb {
-    background: var(--accent-primary);
-    border-radius: 4px;
-  }
-
-  .dropdown.open > .dropdown-menu {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .dropdown-menu a {
-    text-align: center;
-    padding: 0.75rem 0;
-    border-bottom: 1px solid rgba(0, 153, 204, 0.1);
-  }
 }
 
 @media (max-width: 768px) {
@@ -1679,6 +1645,40 @@ body.light-mode .theme-switcher:hover {
 
   .map-section iframe {
     height: 300px;
+  }
+
+  /* Keep dropdowns scrollable but contained */
+  .dropdown-menu {
+    position: static !important;
+    max-height: 300px;
+    overflow-y: auto;
+    background: var(--bg-secondary);
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    z-index: 1002;
+    scroll-behavior: smooth;
+  }
+
+  .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  .dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 4px;
+  }
+
+  .dropdown.open > .dropdown-menu {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .dropdown-menu a {
+    text-align: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(0, 153, 204, 0.1);
   }
 }
 
