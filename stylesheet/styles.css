@@ -852,6 +852,7 @@ body.light-mode .theme-switcher:hover {
   object-fit: contain;
   filter: brightness(0.95) contrast(1.05);
   transition: all 0.3s ease;
+  border-radius: 15px;
 }
 
 .carousel-item:hover img {
