@@ -267,16 +267,16 @@
   padding: 0 2rem 2rem 2rem;
 }
 
-.services-form-hero{
+.services-form-hero {
   height: 25vh;
 }
 
-.hero-content{
+.hero-content {
   padding: 0;
   margin-top: 3rem;
 }
 
-.services-form-hero .hero-content{
+.services-form-hero .hero-content {
   text-align: center;
 }
 
@@ -301,32 +301,333 @@
   margin: 0 auto;
 }
 
-/* === Responsive Adjustments === */
+/* === Networking Section === */
 
-@media (max-width: 1024px) {
-  .services-form-hero{
-    min-height: 25vh;
+.network-section-title {
+  z-index: 100;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: var(--accent-primary, #00d9ff);
 }
+
+.divider {
+  position: relative;
+  width: 100%;
+  min-height: 95vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-primary, #e0e6ff);
+  text-align: center;
+  /* padding: 4rem 2rem; */
+}
+
+/* Background image styling */
+.divider .network-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.15;
+  filter: brightness(0.9) contrast(1.1);
+}
+
+/* Overlay gradient (optional for better text visibility) */
+.divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    to top,
+    var(--hero-fade-3),
+    var(--hero-fade-2),
+    var(--hero-fade-1)
+  );
+}
+
+.divider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--hero-fade-3),
+    var(--hero-fade-2),
+    var(--hero-fade-1)
+  );
+}
+
+.divider h3 {
+  margin-bottom: 2rem;
+  z-index: 100;
+  color: var(--text-secondary);
+}
+
+/* Text content wrapper */
+.network-section {
+  max-width: 900px;
+  z-index: 1;
+}
+
+.network-text h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--accent-primary, #00d9ff);
+  margin-bottom: 2rem;
+  line-height: 1.4;
+}
+
+.network-text h3 {
+  color: var(--accent-secondary, #e0e6ff);
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.5rem 0;
+  font-weight: 600;
+}
+
+.network-text p {
+  color: var(--text-secondary, #cbd5e1);
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.network-text strong {
+  color: var(--accent-primary, #00d9ff);
+  font-weight: 600;
+}
+
+.services-footer {
+  margin: 0;
+}
+
+.divider .cta-button{
+  z-index: 100;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1024px) {
+  .divider {
+    padding: 3rem 1.5rem;
+  }
+
+  .network-text h2 {
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .divider {
+    padding: 5rem 1rem;
+    text-align: center;
+  }
 
-  .heero-title {
-  font-size: 2.5rem;
+  .network-section-title {
+    margin-bottom: 3rem;
+  }
+
+  .network-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .network-text h3 {
+    font-size: 1.2rem;
+    margin: 2rem;
+  }
+
+  .network-text p {
+    font-size: 0.95rem;
+  }
 }
 
-.heero-subtitle {
+/* === Modal Overlay === */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 10, 25, 0.85);
+  backdrop-filter: blur(6px);
+  display: none; /* hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  padding: 1rem;
+  overflow: hidden; /* prevent double scroll on body */
+}
+
+/* === Modal Content === */
+.modal-content {
+  background: var(--bg-primary, #0a0e27);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 1rem;
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.2);
+  padding: 2rem;
+  max-width: 1000px;
+  width: 100%;
+  max-height: 90vh; /* limits height to viewport */
+  overflow-y: auto; /* only vertical scroll inside */
+  color: var(--text-primary, #e0e6ff);
+  position: relative;
+  animation: fadeInUp 0.8s ease forwards;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-primary, #00d9ff) transparent;
+}
+
+/* === Custom Scrollbar for WebKit Browsers === */
+.modal-content::-webkit-scrollbar {
+  width: 6px;
+}
+.modal-content::-webkit-scrollbar-thumb {
+  background: var(--accent-primary, #00d9ff);
+  border-radius: 10px;
+}
+
+/* === Close Button === */
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 2rem;
+  color: var(--accent-primary, #00d9ff);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close-modal:hover {
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* === Modal Heading === */
+.modal-content h3 {
+  text-align: center;
+  color: var(--accent-primary, #00d9ff);
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* === Table Styling === */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 1rem;
+}
+
+.services-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  color: var(--text-secondary, #cbd5e1);
+  table-layout: fixed; /* helps wrapping */
+  word-wrap: break-word;
+}
+
+.services-table th,
+.services-table td {
+  padding: 0.8rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  vertical-align: top;
   font-size: 1rem;
 }
 
+.services-table th {
+  background: rgba(0, 217, 255, 0.1);
+  color: var(--accent-primary, #00d9ff);
+  border-bottom: 1px solid rgba(0, 217, 255, 0.3);
+}
+
+.services-table tr:hover {
+  background: rgba(0, 217, 255, 0.05);
+}
+
+/* === Link to open modal === */
+.services-link {
+  margin-top: 4rem;
+}
+
+.services-link a {
+  font-size: larger;
+  text-decoration: none;
+  color: var(--accent-primary, #00d9ff);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.services-link a:hover {
+  text-decoration: underline;
+  color: #88d6fa;
+}
+
+/* === Responsive Adjustments === */
+@media (max-width: 1024px) {
+  .modal-content {
+    max-width: 90%;
+    padding: 1.5rem;
+    max-height: 85vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.2rem;
+    max-width: 95%;
+    max-height: 80vh;
+  }
+
+  .modal-content h3 {
+    font-size: 1.4rem;
+    margin-top: 2rem;
+  }
+
+  .services-table th,
+  .services-table td {
+    font-size: 0.85rem;
+    padding: 0.6rem;
+  }
+
+  .table-wrapper {
+    overflow-x: hidden; /* avoid horizontal scroll */
+  }
+}
+
+/* === Responsive Adjustments === */
+
+@media (max-width: 1024px) {
+  .services-form-hero {
+    min-height: 25vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .heero-title {
+    font-size: 2.5rem;
+  }
+
+  .heero-subtitle {
+    font-size: 1rem;
+  }
 
   .service-card-1 {
     flex-direction: column !important;
   }
 
-  .services-form-hero{
-  height: 25vh;
-}
+  .services-form-hero {
+    height: 25vh;
+  }
   .form-grid .contact-form .form-group {
     flex: 1 1 100%;
     max-width: 100%;

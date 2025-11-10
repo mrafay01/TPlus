@@ -203,3 +203,28 @@ document.addEventListener("DOMContentLoaded", () => {
     .querySelectorAll(".stat-card")
     .forEach((card) => counterObserver.observe(card));
 });
+
+// Netowrking Popup
+
+const modal = document.getElementById("servicesModal");
+const openBtn = document.getElementById("openServicesModal");
+const closeBtn = document.getElementById("closeServicesModal");
+
+openBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  modal.style.display = "flex";
+  document.body.style.overflow = "hidden"; // prevent background scroll
+});
+
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  document.body.style.overflow = "auto";
+});
+
+// Close when clicking outside the modal
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
+  }
+});

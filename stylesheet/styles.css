@@ -1682,6 +1682,12 @@ body.light-mode .theme-switcher:hover {
   }
 }
 
+@media (max-width: 600px) {
+  .tab-text {
+    display: none;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-index .hero-title {
     font-size: 2rem;
@@ -1718,9 +1724,5 @@ body.light-mode .theme-switcher:hover {
 
   .social-links {
     justify-content: center;
-  }
-
-  .tab-text {
-    display: none;
   }
 }
