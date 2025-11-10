@@ -1343,6 +1343,17 @@ body.light-mode .theme-switcher:hover {
   line-height: 1.8;
 }
 
+.footer-section a{
+  text-decoration: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: color 0.3s ease;;
+}
+
+.footer-section a:hover{
+  color: var(--accent-primary);
+}
+
 .footer-section ul {
   list-style: none;
 }
