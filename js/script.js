@@ -29,12 +29,19 @@ document.querySelectorAll(".dropdown > a").forEach((dropToggle) => {
 });
 
 // === Theme Preference ===
-const currentTheme = localStorage.getItem("theme") || "dark";
+// Always default to light theme
+let currentTheme = localStorage.getItem("theme") || "light";
+
+// Apply theme on page load
 if (currentTheme === "light") {
   document.body.classList.add("light-mode");
   themeSwitcher.innerHTML = '<i class="fas fa-sun"></i>';
+} else {
+  document.body.classList.remove("light-mode");
+  themeSwitcher.innerHTML = '<i class="fas fa-moon"></i>';
 }
 
+// Theme switcher click event
 themeSwitcher.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
   const isLightMode = document.body.classList.contains("light-mode");
@@ -43,6 +50,7 @@ themeSwitcher.addEventListener("click", () => {
     ? '<i class="fas fa-sun"></i>'
     : '<i class="fas fa-moon"></i>';
 });
+
 
 // === Navbar Hide/Show on Scroll ===
 let lastScrollTop = 0;
