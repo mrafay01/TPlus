@@ -1344,14 +1344,14 @@ body.light-mode .theme-switcher:hover {
   line-height: 1.8;
 }
 
-.footer-section a{
+.footer-section a {
   text-decoration: none;
   color: var(--text-secondary);
   cursor: pointer;
-  transition: color 0.3s ease;;
+  transition: color 0.3s ease;
 }
 
-.footer-section a:hover{
+.footer-section a:hover {
   color: var(--accent-primary);
 }
 
@@ -1451,6 +1451,25 @@ body.light-mode .theme-switcher:hover {
 }
 
 /* Responsive */
+
+@media (max-width: 1600px) {
+  html {
+    font-size: 92%;
+  }
+}
+
+@media (max-width: 1300px) {
+  html {
+    font-size: 85%;
+  }
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 80%;
+  }
+}
+
 @media (max-width: 1024px) {
   /* Adjust container padding on slightly smaller screens */
   .nav-container,

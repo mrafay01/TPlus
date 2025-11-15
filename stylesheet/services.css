@@ -355,12 +355,12 @@
   display: flex;
   justify-content: center; /* center horizontally */
   align-items: center; /* align vertically */
-  gap: 1.5rem; /* space between images */
-  margin: 2rem 0;
+  gap: 5rem; /* space between images */
+  margin: 2rem;
 }
 
 .network-image-section .network-image {
-  max-width: 48%;
+  max-width: 42%;
   height: auto;
   object-fit: contain;
   border-radius: 1rem;
@@ -504,6 +504,10 @@
     max-height: 85vh;
   }
 
+  .network-image-section .network-image {
+    max-width: 48%;
+  }
+
   .network-column {
     padding: 0 1rem;
   }
@@ -554,7 +558,7 @@
   .network-image-section .network-image {
     max-width: 100%;
   }
-    .nn {
+  .nn {
     display: none;
   }
 }
